@@ -7,6 +7,9 @@ nbproject
 # parus admin module
 parus
 
+# uploads files
+/web/uploads
+
 # zend studio for eclipse project files
 .buildpath
 .project
