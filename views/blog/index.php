@@ -24,7 +24,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $category->meta_de
             </div>
             <div class="col-sm-3 col-xs-12 side">
                 <?= $this->render('../partials/_category-sidebar', [
-                    'menu' => \rokorolov\parus\menu\api\Menu::navItems('blog_menu')
+                    'menu' => get_nav_by('alias', 'blog_menu')
                 ]) ?>
             </div>
         </div>

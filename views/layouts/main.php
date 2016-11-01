@@ -50,7 +50,7 @@ AppAsset::register($this);
 
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => array_merge(\rokorolov\parus\menu\api\Menu::navItems('main_menu'), [$navItems]),
+        'items' => array_merge(get_nav_by('alias', 'main_menu'), [$navItems]),
     ]);
     NavBar::end();
     ?>
