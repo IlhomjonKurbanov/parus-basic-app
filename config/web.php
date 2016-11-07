@@ -23,8 +23,27 @@ $config = [
             ],
             'blogConfig' => [
                 'post.imageTransformations' => [
-                    ['postfix' => 'large', 'width' => 900, 'height' => 400, 'method' => 'crop']
+                    ['postfix' => 'thumb', 'width' => 74, 'height' => 55, 'method' => 'crop'],
+                    ['postfix' => 'small', 'width' => 300, 'height' => 168, 'method' => 'crop'],
+                    ['postfix' => 'large', 'width' => 770]
                 ],
+            ],
+            'galleryConfig' => [
+                'uploadImageConfig' => [
+                    'imageTransformations' => [
+                        ['width' => 230, 'height' => 170, 'method' => 'crop', 'postfix' => 'thumb'],
+                    ]
+                    
+                ],
+                'uploadImageMapConfig' => [
+                    '1' => [
+                        'minImageWidth' => 1200,
+                        'minImageHeight' => 470,
+                        'imageTransformations' => [
+                            ['postfix' => 'large', 'width' => 1200, 'height' => 470, 'method' => 'crop'],
+                        ]
+                    ],
+                ]
             ],
             'fileManagerConfig' => [
                 'responsiveFileManagerSrc' => '/plugins/responsivefilemanager/dialog.php?type=0',
@@ -74,8 +93,8 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                '' => 'site/index',
-                'site/<_a:(about|contact|captcha|login)>' => 'site/<_a>',
+                '' => 'page/index',
+                '<action:(about|contact|gallery)>' => 'page/<action>',
                 'admin' => 'admin/dashboard/dashboard/index',
                 [
                     'class' => 'rokorolov\parus\menu\components\PageUrlRule',
