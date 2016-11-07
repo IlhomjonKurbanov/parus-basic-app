@@ -15,7 +15,6 @@ h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .h7 {
     font-weight: 700;
 }
-
 a:hover {
     color: #0080ce;
 }
@@ -56,7 +55,6 @@ a, a:focus, a:hover {
     padding: 4px 14px 5px;
     display: inline-block;
 }
-
 .entry-item-list {
     margin-bottom: 25px;
 }
@@ -97,7 +95,6 @@ a, a:focus, a:hover {
     font-size: 14px;
     line-height: 19px;
 }
-
 .entry-meta-listview {
     margin-top: 7px;
     font-size: 14px;
@@ -153,11 +150,9 @@ a, a:focus, a:hover {
     margin-top: 7px;
     font-size: 14px;
 }
-
 .entry-meta,
 .entry-meta a {
     color: #999;
-    font-family: "Lato";
 }
 
 .entry-meta-list {
@@ -166,14 +161,12 @@ a, a:focus, a:hover {
     text-transform: none;
     margin-top: 3px;
 }
-
 .entry-slide {
     padding-right: 10px;
 }
 .entry-image-slide {
     margin-bottom: 9px;
 }
-
 .slider-list-buttons {
     position: absolute;
     right: 15px;
@@ -198,8 +191,6 @@ a, a:focus, a:hover {
     color: #0288d1; 
     border-color: rgba(2, 136, 209, 0.5);
 }
-
-
 .entry-badge.floated {
     position: absolute;
     top: 0;
@@ -228,7 +219,6 @@ a, a:focus, a:hover {
 .entry-badge a:focus {
     background: #00A0EC none repeat scroll 0 0;
 }
-
 .slider-single-buttons .slider-single-next,
 .slider-single-buttons .slider-single-prev {
     background: rgba(116, 132, 136, 0.5) none repeat scroll 0 0;
@@ -255,13 +245,9 @@ a, a:focus, a:hover {
 .slider-single-prev:hover {
     opacity: 1;
 }
-
-
 .header-inner {
     padding: 30px 0;
 }
-
-
 .main-navbar {
     background-color: #191919;
     border-color: #222;
@@ -326,25 +312,20 @@ a, a:focus, a:hover {
     background-color: transparent;
     color: #0080ce;
 }
-
 .header-logo {
     font-size: 36px;
     color: #353A48;
     font-weight: bold;
 }
-
 .header-logo a {
     color: #353A48;
 }
-
 .logo-text-colored {
     color: #2196f3;
 }
-
 .logo-text-small {
     font-size: 14px;
 }
-
 .header-topbar {
     line-height: 40px; 
     background-color: #f5f5f5;
@@ -362,7 +343,6 @@ a, a:focus, a:hover {
     margin-right: 20px;
     color: #555;
 }
-
 .footer {
     color: #ddd;
     height: 60px;
@@ -370,7 +350,6 @@ a, a:focus, a:hover {
     border-top: 1px solid #222;
     padding-top: 20px;
 }
- 
 .widget {
     margin: 0 0 40px 0;
 }
@@ -399,75 +378,60 @@ a, a:focus, a:hover {
     background-color: #78909c;
     font-weight: 600;
 }
-
 .entry-title-view {
     font-size: 40px;
     line-height: 50px;
 }
-
 .entry-meta-view {
     margin-top: 10px;
     font-size: 16px;
     line-height: 22px;
 }
-
 .entry-image-view {
     margin-top: 25px;
     margin-bottom: 30px;
 }
-
 .entry-content-view {
     font-size: 16px;
     line-height: 26px; 
     color: #000;
 }
-
 .entry-content-view p {
     margin-bottom: 30px;
 }
-
 .entry-view-area {
     margin-bottom: 40px;
 }
-
-
 .gallery-item {
     display: inline;
     padding: 10px !important;
 }
-
 .gallery-item a img {
     transition: box-shadow 200ms ease 0s;
     vertical-align: bottom;
 }
-
 .gallery-item a:hover img {
     box-shadow: 0 0 0 4px #0080ce;
 }
-
 .slider-list-item {
     padding-right: 10px; 
 }
-
 .entry-title-head .entry-title-head-link {
     color: #fff;
     font-size: 42px;
     line-height: 50px;
 }
-
 .entry-head {
     width: 770px;
     position: relative;
     display: block;
 }
-
 .entry-head-overlay::before {
     content: "";
     display: inline-block;
     height: 100%;
     vertical-align: middle;
 }
-
 .entry-head-overlay {
     bottom: 0;
     font-size: 0;
@@ -479,36 +443,30 @@ a, a:focus, a:hover {
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );
     padding: 0 5%;
 }
-
 .entry-head-content {
     display: inline-block;
     vertical-align: middle;
     width: 100%;
 }
-
 .entry-meta-category-head > a {
     background-color: #333;
     padding: 6px 12px;
     color: #fff;
 }
-
 .entry-meta-category-head > a:hover {
     background-color: #0080ce;
 }
-
 .entry-meta-category-head {
     float: left;
     width: 100%;
     margin-bottom: 13px;
 }
-
 .entry-meta-head {
     margin-top: 15px;
     color: #fff;
     font-size: 15px;
     line-height: 22px;
 }
-
 .page {
     margin-bottom: 40px;
 }
