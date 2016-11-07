@@ -34,7 +34,9 @@ $this->registerMetaTag(['name' => 'description', 'content' => $entry->meta_descr
                     
                     <?php if (!empty($entry->image)) : ?>
                         <div class="entry-image entry-image-view">
-                            <?= Html::img($entry->image_large_src, ['class' => 'media-object']) ?>
+                            <a class="popup-image popup-image-default" href="<?= $entry->image_src() ?>">
+                                <?= Html::img($entry->image_large_src, ['class' => 'media-object']) ?>
+                            </a>
                         </div>
                     <?php endif; ?>
 

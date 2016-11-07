@@ -10,7 +10,9 @@ SlickAsset::register($this);
     <div class="slider-list-items">
         <?php foreach ($images as $image) :  ?>
             <div class="slider-list-item clearfix">
-                <?=  Html::img($image->image_thumb_src, ['class' => 'img-responsive']) ?>
+                <a class="popup-image popup-image-default" href="<?= $image->image_src() ?>">
+                    <?=  Html::img($image->image_thumb_src, ['class' => 'img-responsive']) ?>
+                </a>
             </div>
         <?php endforeach;  ?>
     </div>

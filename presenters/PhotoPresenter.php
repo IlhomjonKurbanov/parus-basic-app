@@ -3,7 +3,6 @@
 namespace app\presenters;
 
 use rokorolov\parus\admin\base\BasePresenter;
-use rokorolov\helpers\Html;
 use Yii;
 
 /**

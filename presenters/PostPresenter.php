@@ -24,6 +24,11 @@ class PostPresenter extends BasePresenter
         return Yii::$app->formatter->asRelativeTime($this->wrappedObject->published_at);
     }
     
+    public function image_src()
+    {
+        return $this->full_image_src();
+    }
+    
     public function image_large_src()
     {
         return $this->full_image_src('large');
