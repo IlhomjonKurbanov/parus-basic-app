@@ -26,36 +26,57 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
-    <?php
-    NavBar::begin([
-        'brandLabel' => 'My Company',
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
-    ]);
+    <header class="header-area">
+        <div class="header-topbar">
+            <div class="container">
+                    <div class="header-topbar-left pull-left">
+                        <ul class="list-inline list-unstyled header-login">
+                            <li>
+                                <a class="header-login-link" href="/admin">Login admin / password</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="header-topbar-right pull-right">
+                        <ul class="list-inline list-unstyled header-social-links">
+                            <li>
+                                <a class="header-social-link" target="_blank" href="https://github.com/rokorolov/parus-basic-app"><i class="fa fa-github" aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+        <div class="header-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="header-logo col-xs-4">
+                        <a href="/">Parus <span class="logo-text-colored">Tech</span> <span class="logo-text-small text-muted">demo site</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <?php
+                NavBar::begin([
+                    'options' => [
+                        'class' => 'navbar-inverse main-navbar',
+                    ],
+                ]);
+
+                $navItems = [
+                    ['label' => 'gallery', 'url' => ['/page/gallery']],
+                    ['label' => 'contact', 'url' => ['/page/contact']]
+                ];
+
+                echo Nav::widget([
+                    'options' => ['class' => 'navbar-nav'],
+                    'items' => array_merge(get_nav_by('alias', 'main_menu'), $navItems),
+                ]);
+                NavBar::end();
+            ?>
+        </div>
+    </header>
     
-    $navItems = Yii::$app->user->isGuest ? (
-        ['label' => 'Login', 'url' => ['/site/login']]
-        ) : (
-        '<li>'
-        . Html::beginForm(['/site/logout'], 'post', ['class' => 'navbar-form'])
-        . Html::submitButton(
-            'Logout (' . Yii::$app->user->identity->username . ')',
-            ['class' => 'btn btn-link']
-        )
-        . Html::endForm()
-        . '</li>'
-    );
-
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => array_merge(get_nav_by('alias', 'main_menu'), [$navItems]),
-    ]);
-    NavBar::end();
-    ?>
-
-    <div class="container">
+    <div class="content-area container">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
@@ -65,9 +86,11 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left">&copy; Parus CMS <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-right">
+            <?= Yii::t('yii', 'Powered by') ?> <a target="_blank" href="https://github.com/rokorolov/parus-basic-app">Parus CMS</a>
+        </p>
     </div>
 </footer>
 
