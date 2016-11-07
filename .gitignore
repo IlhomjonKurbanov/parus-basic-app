@@ -4,6 +4,9 @@
 # netbeans project files
 nbproject
 
+# composer lock
+composer.lock
+
 # parus admin module
 parus
 
