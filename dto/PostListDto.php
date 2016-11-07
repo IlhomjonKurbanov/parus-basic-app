@@ -14,6 +14,7 @@ class PostListDto
     public $slug;
     public $introtext;
     public $image;
+    public $hits;
     public $category_id;
     public $category_title;
     public $published_at;

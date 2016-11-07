@@ -2,7 +2,6 @@
 
 namespace app\controllers;
 
-use app\services\BlogService;
 use Yii;
 use yii\web\NotFoundHttpException;
 use yii\web\Controller;
@@ -10,22 +9,10 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 
 /**
- * Site controller
+ * Entry controller
  */
-class BlogController extends Controller
+class EntryController extends Controller
 {
-    private $service;
-    
-    public function __construct(
-        $id,
-        $module,
-        BlogService $service,
-        $config = array()
-    ) {
-        $this->service = $service;
-        parent::__construct($id, $module, $config);
-    }
-    
     /**
      * @inheritdoc
      */
@@ -58,35 +45,38 @@ class BlogController extends Controller
     }
 
     /**
-     * Displays homepage.
+     * Displays category with post view.
      *
      * @return mixed
      */
     public function actionIndex($id)
     {
-        if (null === $category = $this->service->getCategoryById($id)) {
-            throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
-        }
+        $category = $id ? get_category_by('id', $id, ['with' => 'post_count']) : get_root_category();
+
+        $searchModel = new \app\models\search\PostSearch();
+        $dataProvider = $searchModel->search($category, Yii::$app->request->queryParams);
         
-        return $this->render('index', [
+        return $this->render('category', [
             'category' => $category,
-            'posts' => $this->service->getPostsByCategory($category)
+            'dataProvider' => $dataProvider
         ]);
     }
 
     /**
-     * Displays homepage.
+     * Displays single entry view.
      *
      * @return mixed
      */
     public function actionPost($id)
     {
-        if (null === $post = $this->service->getPostById($id)) {
+        if (null === $entry = get_post_by('id', $id, ['with' => 'category'])) {
             throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
         }
+        
+        update_post_counter($entry->id);
 
-        return $this->render('post', [
-            'post' => $post
+        return $this->render('entry', [
+            'entry' => $entry
         ]);
     }
 }
