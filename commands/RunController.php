@@ -70,6 +70,13 @@ class RunController extends Controller
         $this->stdout("\nSample data successfully installed.\n", Console::FG_GREEN);
     }
     
+    public function actionPostSampleDataInstall()
+    {
+        $this->stdout("\nStart Sample data Installation ...\n", Console::FG_YELLOW);
+        Yii::createObject('rokorolov\parus\admin\helpers\SampleDataInstall')->installPostSampleData();
+        $this->stdout("\nSample data successfully installed.\n", Console::FG_GREEN);
+    }
+    
     public function actionMigrateDown()
     {
         if ($this->confirm("\nAre you sure you want to revert migrations?")) {
