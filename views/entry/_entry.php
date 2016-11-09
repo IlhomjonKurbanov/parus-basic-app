@@ -3,11 +3,11 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 ?>
 
-<article class="entry-single-listview">
+<article class="entry-single-listview clearfix">
     <?php if (!empty($model->image)) : ?>
         <div class="entry-image entry-image-listview">
             <a href="<?= Url::to(['post/show', 'id' => $model->id]) ?>">
-                <?= Html::img($model->image_small_src, ['class' => 'media-object']) ?>
+                <?= Html::img($model->image_small_src, ['class' => 'media-object img-responsive']) ?>
             </a>
         </div>
     <?php endif; ?>

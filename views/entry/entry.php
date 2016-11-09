@@ -10,7 +10,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $entry->meta_descr
     <div class="container">
         <div class="row">
             <div class="col-lg-9 col-md-9">
-                <article>
+                <article class="clearfix">
                     <span class="entry-meta-category entry-meta-category-view">
                         <a href="<?= Url::to(['category/show', 'id' => $entry->category->id]) ?>">
                             <?= $entry->category->title ?>
@@ -35,7 +35,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $entry->meta_descr
                     <?php if (!empty($entry->image)) : ?>
                         <div class="entry-image entry-image-view">
                             <a class="popup-image popup-image-default" href="<?= $entry->image_src() ?>">
-                                <?= Html::img($entry->image_large_src, ['class' => 'media-object']) ?>
+                                <?= Html::img($entry->image_large_src, ['class' => 'media-object img-responsive']) ?>
                             </a>
                         </div>
                     <?php endif; ?>

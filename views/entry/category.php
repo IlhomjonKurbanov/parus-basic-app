@@ -9,7 +9,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $category->meta_de
 <div class="entry-listview-area">
     <div class="container">
         <div class="row">
-            <div class="col-sm-9 col-xs-12">
+            <div class="col-lg-9 col-md-9">
                 <div class="section-heading <?= $category->cat_type ?>">
                     <h3 class="section-heading-title">
                         <?= $category->title ?>
@@ -21,7 +21,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $category->meta_de
                     'summary' => false,
                 ]); ?>
             </div>
-            <div class="col-sm-3 col-xs-12 side">
+            <div class="col-lg-3 col-md-3 side">
                 <div class="widget widget-category-nav">
                     <div class="section-heading">
                         <h3 class="section-heading-title">
