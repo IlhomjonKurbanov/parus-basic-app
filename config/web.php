@@ -107,6 +107,11 @@ $config = [
                 ]
             ],
         ],
+        'formatter' => [
+            'class' => 'yii\i18n\Formatter',
+            'defaultTimeZone' => 'Europe/Riga',
+            'timeZone' => 'Europe/Riga',
+        ],
     ],
     'params' => $params,
 ];
