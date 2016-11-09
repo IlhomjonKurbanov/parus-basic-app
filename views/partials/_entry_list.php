@@ -4,10 +4,10 @@ use yii\helpers\Url;
 ?>
 
 <?php foreach($entries as $entry) : ?>
-    <article class="entry-item-list">
+    <article class="entry-item-list clearfix">
         <div class="entry-image-list">
             <a href="<?= Url::to(['post/show', 'id' => $entry->id]) ?>">
-                <?= Html::img($entry->image_thumb_src, ['class' => 'media-object']) ?>
+                <?= Html::img($entry->image_thumb_src, ['class' => 'media-object img-responsive']) ?>
             </a>
         </div>
         <div class="entry-body-list">

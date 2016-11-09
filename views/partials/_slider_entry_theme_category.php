@@ -9,7 +9,7 @@ SlickAsset::register($this);
 ?>
 <div class="entry-slide-category">
     <?php foreach ($entries as $entry) :  ?>
-        <article class="entry-slide">
+        <article class="entry-slide clearfix">
             <div class="entry-image entry-image-slide clearfix">
                 <div class="entry-badge floated">
                     <span>

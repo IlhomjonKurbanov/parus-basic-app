@@ -34,3 +34,7 @@ composer.phar
 phpunit.phar
 # local phpunit config
 /phpunit.xml
+
+#PHPloy script
+phploy
+phploy.ini

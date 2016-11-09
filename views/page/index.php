@@ -3,7 +3,8 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-$this->title = 'Parus home page';
+$this->title = get_setting('SITE.NAME');
+$this->registerMetaTag(['name' => 'description', 'content' => get_setting('META.DESCRIPTION')], 'description');
 ?>
 
 <section class="main-slider-area section-medium-margin">
@@ -93,7 +94,7 @@ $this->title = 'Parus home page';
                         $firstEntry = array_shift($posts);
                     ?>
                     <?php if (!empty($firstEntry)) : ?>
-                        <article>
+                        <article class=" clearfix">
                             <div class="entry-image entry-image-first clearfix">
                                 <a href="<?= Url::to(['post/show', 'id' => $firstEntry->id]) ?>"><?= Html::img($firstEntry->image_small_src, ['class' => 'img-responsive']) ?> </a>
                             </div>
@@ -111,7 +112,7 @@ $this->title = 'Parus home page';
                     <div class="entry-list">
                         <?php foreach($posts as $entry) : ?>
 
-                            <article class="entry-item-list">
+                            <article class="entry-item-list clearfix">
                                 <div class="entry-image-list">
                                     <a href="<?= Url::to(['post/show', 'id' => $entry->id]) ?>">
                                         <?= Html::img($entry->image_thumb_src, ['class' => 'media-object']) ?>
