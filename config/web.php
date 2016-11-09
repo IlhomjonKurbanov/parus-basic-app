@@ -22,18 +22,19 @@ $config = [
                 ],
             ],
             'blogConfig' => [
-                'post.imageTransformations' => [
-                    ['postfix' => 'thumb', 'width' => 74, 'height' => 55, 'method' => 'crop'],
-                    ['postfix' => 'small', 'width' => 300, 'height' => 168, 'method' => 'crop'],
-                    ['postfix' => 'large', 'width' => 770]
-                ],
+                'post.introImageConfig' => [
+                    'transformations' => [
+                        ['postfix' => 'thumb', 'width' => 74, 'height' => 55, 'method' => 'crop'],
+                        ['postfix' => 'small', 'width' => 300, 'height' => 168, 'method' => 'crop'],
+                        ['postfix' => 'large', 'width' => 770]
+                    ]
+                ]
             ],
             'galleryConfig' => [
                 'uploadImageConfig' => [
                     'imageTransformations' => [
                         ['width' => 230, 'height' => 170, 'method' => 'crop', 'postfix' => 'thumb'],
                     ]
-                    
                 ],
                 'uploadImageMapConfig' => [
                     '1' => [
