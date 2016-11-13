@@ -7,6 +7,7 @@ use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
+use yii\web\NotFoundHttpException;
 
 /**
  * Site controller
@@ -61,6 +62,8 @@ class PageController extends Controller
         if (null === $page = get_page_by('id', $id)) {
             throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
         }
+        
+        update_page_counter($id);
         
         return $this->render('view', [
             'page' => $page

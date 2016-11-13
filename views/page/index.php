@@ -81,7 +81,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => get_setting('META.
 
 <section class="category-entry-area section-medium-margin">
     <div class="row">
-        <?php if (!empty($categories = get_category_by('alias', ['cloud', 'mobility', 'tech'], ['post_group_limit' => 4, 'with' => 'post']))) : ?>
+        <?php if (!empty($categories = get_category_by('alias', ['cloud', 'mobility', 'tech'], ['post_group_limit' => 4, 'with' => ['post' => ['order' => 'hits DESC']]]))) : ?>
             <?php foreach($categories as $category) : ?>
                 <div class="col-lg-4 col-md-4 col-sm-4">
                     <div class="section-heading <?= $category->cat_type ?>">

@@ -467,8 +467,9 @@ a, a:focus, a:hover {
     font-size: 15px;
     line-height: 22px;
 }
-.page {
+.page-view{
     margin-bottom: 40px;
+    min-height: 300px;
 }
 
 /*.section-heading.cat-3:after, 
