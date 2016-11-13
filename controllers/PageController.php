@@ -63,6 +63,8 @@ class PageController extends Controller
             throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
         }
         
+        update_page_counter($id);
+        
         return $this->render('view', [
             'page' => $page
         ]);
