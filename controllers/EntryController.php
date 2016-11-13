@@ -52,7 +52,11 @@ class EntryController extends Controller
     public function actionIndex($id)
     {
         $category = $id ? get_category_by('id', $id, ['with' => 'post_count']) : get_root_category();
-
+        
+        if (null === $category) {
+            throw new NotFoundHttpException(Yii::t('app', 'Category does not exist.'));
+        }
+        
         $searchModel = new \app\models\search\PostSearch();
         $dataProvider = $searchModel->search($category, Yii::$app->request->queryParams);
         
