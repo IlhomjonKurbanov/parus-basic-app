@@ -48,7 +48,7 @@ AppAsset::register($this);
         <div class="header-inner">
             <div class="container">
                 <div class="row">
-                    <div class="header-logo col-xs-4">
+                    <div class="header-logo col-md-7">
                         <a href="/">Parus <span class="logo-text-colored">Tech</span> <span class="logo-text-small text-muted">demo site</span></a>
                     </div>
                 </div>
