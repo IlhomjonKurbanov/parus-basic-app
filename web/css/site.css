@@ -2,6 +2,13 @@
     Created on : Nov 2, 2016, 2:48:17 PM
     Author     : Roman Korolov <rokorolov@gmail.com>
 */
+html, body {
+    min-height: 100vh;
+}
+body {
+    position: relative;
+    padding-bottom: 60px;
+}
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
@@ -14,6 +21,9 @@ h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .h7 {
     font-weight: 700;
+}
+h1 {
+    margin-bottom: 20px;
 }
 a:hover {
     color: #0080ce;
@@ -349,6 +359,9 @@ a, a:focus, a:hover {
     background-color: #222;
     border-top: 1px solid #222;
     padding-top: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 .widget {
     margin: 0 0 40px 0;
