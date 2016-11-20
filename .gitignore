@@ -38,3 +38,6 @@ phpunit.phar
 #PHPloy script
 phploy
 phploy.ini
+
+#DB config
+/config/db-local.php
