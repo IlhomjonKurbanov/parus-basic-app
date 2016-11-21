@@ -13,14 +13,8 @@ use yii\helpers\Console;
  */
 class RunController extends Controller
 {
-    /**
-     * @inheritdoc
-     */
     public $defaultAction = 'init';
 
-    /**
-     * Init Epage
-     */
     public function actionInit()
     {
         if ($this->confirm("\nDo you want to apply Migrations?")) {
@@ -43,13 +37,7 @@ class RunController extends Controller
     public function actionMigrate()
     {
         $this->stdout("\nStart applying Migrations ...\n", Console::FG_YELLOW);
-        Yii::$app->runAction('migrate/up', ['migrationPath' => '@rokorolov/parus/language/migrations']);
-        Yii::$app->runAction('migrate/up', ['migrationPath' => '@rokorolov/parus/user/migrations']);
-        Yii::$app->runAction('migrate/up', ['migrationPath' => '@rokorolov/parus/settings/migrations']);
-        Yii::$app->runAction('migrate/up', ['migrationPath' => '@rokorolov/parus/blog/migrations']);
-        Yii::$app->runAction('migrate/up', ['migrationPath' => '@rokorolov/parus/page/migrations']);
-        Yii::$app->runAction('migrate/up', ['migrationPath' => '@rokorolov/parus/menu/migrations']);
-        Yii::$app->runAction('migrate/up', ['migrationPath' => '@rokorolov/parus/gallery/migrations']);
+        Yii::$app->runAction('migrate/up', ['migrationPath' => '@rokorolov/parus/admin/migrations']);
     }
     
     public function actionRbacInstall()
@@ -81,13 +69,7 @@ class RunController extends Controller
     {
         if ($this->confirm("\nAre you sure you want to revert migrations?")) {
             $this->stdout("\nStart reverting migrations ...\n", Console::FG_YELLOW);
-            Yii::$app->runAction('migrate/down', ['migrationPath' => '@rokorolov/parus/gallery/migrations']);
-            Yii::$app->runAction('migrate/down', ['migrationPath' => '@rokorolov/parus/menu/migrations']);
-            Yii::$app->runAction('migrate/down', ['migrationPath' => '@rokorolov/parus/page/migrations']);
-            Yii::$app->runAction('migrate/down', ['migrationPath' => '@rokorolov/parus/blog/migrations']);
-            Yii::$app->runAction('migrate/down', ['migrationPath' => '@rokorolov/parus/settings/migrations']);
-            Yii::$app->runAction('migrate/down', ['migrationPath' => '@rokorolov/parus/user/migrations']);
-            Yii::$app->runAction('migrate/down', ['migrationPath' => '@rokorolov/parus/language/migrations']);
+            Yii::$app->runAction('migrate/down', ['migrationPath' => '@rokorolov/parus/admin/migrations']);
         }
     }
         
