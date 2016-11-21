@@ -90,9 +90,9 @@ $config = [
             ],
         ],
         'db' => array_merge(
-			include_once __DIR__ . '/db.php',
-			is_file(__DIR__ . '/db-local.php') ? include_once __DIR__ . '/db-local.php' : []
-		),
+            include_once __DIR__ . '/db.php',
+            is_file(__DIR__ . '/db-local.php') ? include_once __DIR__ . '/db-local.php' : []
+        ),
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
