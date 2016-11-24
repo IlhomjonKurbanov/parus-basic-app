@@ -1,6 +1,6 @@
 <?php
 
-$params = require(__DIR__ . '/params.php');
+$params = require(__DIR__ . DIRECTORY_SEPARATOR . 'params.php');
 
 $config = [
     'id' => 'basic',
@@ -89,10 +89,7 @@ $config = [
                 ],
             ],
         ],
-        'db' => array_merge(
-            include_once __DIR__ . '/db.php',
-            is_file(__DIR__ . '/db-local.php') ? include_once __DIR__ . '/db-local.php' : []
-        ),
+        'db' => include_once __DIR__ . DIRECTORY_SEPARATOR . 'db.php',
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
