@@ -8,7 +8,7 @@ nbproject
 composer.lock
 
 # parus admin module
-parus
+/parus
 
 # uploads files
 /web/uploads
