@@ -65,11 +65,11 @@ class RunController extends Controller
         $this->stdout("\nSample data successfully installed.\n", Console::FG_GREEN);
     }
     
-    public function actionMigrateDown()
+    public function actionMigrateDown($limit = 1)
     {
         if ($this->confirm("\nAre you sure you want to revert migrations?")) {
             $this->stdout("\nStart reverting migrations ...\n", Console::FG_YELLOW);
-            Yii::$app->runAction('migrate/down', ['migrationPath' => '@rokorolov/parus/admin/migrations']);
+            Yii::$app->runAction('migrate/down', [$limit, 'migrationPath' => '@rokorolov/parus/admin/migrations']);
         }
     }
         
