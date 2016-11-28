@@ -95,7 +95,7 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 '' => 'page/index',
-                '<action:(about|contact|gallery)>' => 'page/<action>',
+                '<action:(contact|gallery)>' => 'page/<action>',
                 'admin' => 'admin/dashboard/dashboard/index',
                 [
                     'class' => 'rokorolov\parus\menu\components\PageUrlRule',
