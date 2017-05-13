@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\search\PostSearch;
 use Yii;
 use yii\web\NotFoundHttpException;
 use yii\web\Controller;
@@ -11,7 +12,7 @@ use yii\filters\AccessControl;
 /**
  * Entry controller
  */
-class EntryController extends Controller
+class CategoryController extends Controller
 {
     /**
      * @inheritdoc
@@ -47,40 +48,24 @@ class EntryController extends Controller
     /**
      * Displays category with post view.
      *
+     * @param $id
      * @return mixed
+     * @throws NotFoundHttpException
      */
-    public function actionIndex($id)
+    public function actionShow($id)
     {
-        $category = $id ? get_category_by('id', $id, ['with' => 'post_count']) : get_root_category();
+        $category = $id ? get_category_by('id', $id) : get_root_category();
         
         if (null === $category) {
             throw new NotFoundHttpException(Yii::t('app', 'Category does not exist.'));
         }
         
-        $searchModel = new \app\models\search\PostSearch();
+        $searchModel = new PostSearch();
         $dataProvider = $searchModel->search($category, Yii::$app->request->queryParams);
         
-        return $this->render('category', [
+        return $this->render('show', [
             'category' => $category,
             'dataProvider' => $dataProvider
-        ]);
-    }
-
-    /**
-     * Displays single entry view.
-     *
-     * @return mixed
-     */
-    public function actionPost($id)
-    {
-        if (null === $entry = get_post_by('id', $id, ['with' => 'category'])) {
-            throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
-        }
-        
-        update_post_counter($entry->id);
-
-        return $this->render('entry', [
-            'entry' => $entry
         ]);
     }
 }

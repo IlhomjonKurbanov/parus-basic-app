@@ -55,9 +55,11 @@ class PageController extends Controller
     /**
      * Displays page.
      *
+     * @param $id
      * @return mixed
+     * @throws NotFoundHttpException
      */
-    public function actionView($id)
+    public function actionShow($id)
     {
         if (null === $page = get_page_by('id', $id)) {
             throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
