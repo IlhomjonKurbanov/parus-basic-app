@@ -61,15 +61,9 @@ AppAsset::register($this);
                         'class' => 'navbar-inverse main-navbar',
                     ],
                 ]);
-
-                $navItems = [
-                    ['label' => 'gallery', 'url' => ['/page/gallery']],
-                    ['label' => 'contact', 'url' => ['/page/contact']]
-                ];
-
                 echo Nav::widget([
                     'options' => ['class' => 'navbar-nav'],
-                    'items' => array_merge(get_nav_by('alias', 'main_menu'), $navItems),
+                    'items' => get_nav_by('alias', 'main_menu')
                 ]);
                 NavBar::end();
             ?>
